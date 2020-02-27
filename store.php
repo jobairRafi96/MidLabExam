@@ -7,14 +7,13 @@
 
 				
 					$file = fopen('admin.txt', 'a');
-
-					
-					
-					fwrite($file, $uname.'\n');
-	
+					$name = "\n";
+					$name.=$uname;
+					fwrite($file, $name);
+					fwrite($file, "|".$password);
 					fclose($file);	
 
-					// header("location: Login.php");
+					header("location: Login.php");
 				
 
 
