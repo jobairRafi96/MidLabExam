@@ -1,5 +1,5 @@
 <?php
-
+		session_start();
 		$userId = $_REQUEST['userId'];
 		$uname = $_REQUEST['uname'];
 		$utype = $_REQUEST['utype'];
@@ -11,8 +11,7 @@
 					$name.=$uname;
 					fwrite($file, $name);
 					fwrite($file, "|".$password);
-					fclose($file);	
-
+				
 					header("location: Login.php");
 				
 
