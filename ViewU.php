@@ -1,10 +1,18 @@
+<?php
+ 	session_start();
+
+ 	if (!isset($_SESSION['uname'])) {
+ 		header("location: Login.php");
+ 	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>User view</title>
 </head>
 <body>
-	<table border="1" align="center">
+	<table border="1" align="center" width="40%">
 		<tr>
 			<td colspan="3">
 				<h1 align="center">View user</h1>
@@ -49,7 +57,7 @@
 
 		<tr>
 			<td colspan="3">
-				<h3 align="right"><a href="">Go Home</a></h1>
+				<h3 align="right"><a href="Admin.php">Go Home</a></h1>
 			</td>
 		</tr>
 	</table>

@@ -4,16 +4,24 @@
 		$uname = $_REQUEST['uname'];
 		$utype = $_REQUEST['utype'];
 		$password = $_REQUEST['pass'];
+		$cpassword =$_REQUEST['cpass'];
 
+
+				if (empty(trim($password)) == empty(trim($cpassword))) {
+					
+				
 				
 					$file = fopen('admin.txt', 'a');
-					$name = "\n";
-					$name.=$uname;
-					fwrite($file, $name);
-					fwrite($file, "|".$password);
+					$pass = "\n";
+					$pass.=$password;
+					fwrite($file, $pass);
+					fwrite($file, "|".$uname);
 				
 					header("location: Login.php");
 				
-
+					}
+				else {
+					echo "pass dont match";
+				}
 
 ?>

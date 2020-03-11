@@ -14,6 +14,31 @@
 		
 				elseif($utype == "admin") {
 
+								  $fn = fopen("admin.txt","r");
+								  
+								  while(! feof($fn))  {
+									$result = fgets($fn);
+
+									$data= explode('|', $result);
+
+
+
+									if (trim($data[0]) == $password && trim($data[1])== $uname) {
+
+											$_SESSION['uname'] = $uname;
+											$_SESSION['pass'] = $password;
+
+											header("location: Admin.php");
+										}
+										
+								  }
+								  echo "invalid username and password";
+						
+								  }
+
+					elseif($utype == "user") {
+				
+
 
 								  $fn = fopen("admin.txt","r");
 								  
@@ -22,45 +47,20 @@
 
 									$data= explode('|', $result);
 
+									
+
 									if (trim($data[0]) == $uname && trim($data[1])== $password) {
 
 											$_SESSION['uname'] = $uname;
 											$_SESSION['pass'] = $password;
 
-											header("location: Admin.php");
+											header("location: User.php");
 										}
-										else{
-											echo "invalid uname/password";
-											break;
-										}
-									
+										
 								  }
-
-								  fclose($fn);
+								  echo "invalid username and password";
 						
-
 								  }
-
-
-
-					// 	$file = fopen('admin.txt', 'r');
-				
-					// 	$user =fread($file, filesize('admin.txt'));
-
-					// 	$data= explode('|', $user);
-
-					// 	if (trim($data[0]) == $uname && trim($data[1])== $password) {
-
-					// 		$_SESSION['uname'] = $uname;
-					// 		$_SESSION['pass'] = $password;
-
-					// 		header("location: Admin.php");
-					// 	}
-					// 	else{
-					// 		echo "invalid uname/password";
-					// 	}
-					// }
-
 			
 
 					else{
@@ -73,6 +73,6 @@
 	}
 	else{
 		echo "Invalid request..please login first";
-		header("location: login.php");
+		header("location: Login.php");
 	}
 ?>

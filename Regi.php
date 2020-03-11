@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +14,7 @@
 			<h4> Password</h4>
 			<input type="Password" name="pass" value=""><br>
 			<h4>Confirm Password</h4>
-			<input type="Password" name="pass" value=""><br>
+			<input type="Password" name="cpass" value=""><br>
 			<h4>NAME</h4>
 			<input type="text" name="uname" value=""><br>
 			<h4>User Type</h4>
